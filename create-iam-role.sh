@@ -8,7 +8,7 @@ TEMP='/tmp/iam-role-policy'
 
 echo '{ "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": "eks:Describe*", "Resource": "*" } ] }' > $TEMP
 
-ROLE='EKSDeepDiveCodeBuildKubectlRole'
+ROLE='EKSCodeBuildKubectlRole'
 POLICY='eks-describe'
 
 aws iam create-role --role-name $ROLE --assume-role-policy-document "$TRUST" --output text --query 'Role.Arn'
